@@ -44,7 +44,7 @@ class LoginForm extends StatelessWidget {
         CustomButton(
           text: 'Login',
           onTap: () {
-            GoRouter.of(context).pushReplacement(AppRouter.kWhoAmIView);
+            GoRouter.of(context).push(AppRouter.kWhoAmIView);
           },
         ),
         const Gap(24),

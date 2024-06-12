@@ -30,6 +30,18 @@ class GenderSection extends StatelessWidget {
             const Gap(16),
             Row(
               children: [
+                // RadioMenuButton(
+                //   value: 'male',
+                //   groupValue: "male",
+                //   onChanged: (value) {},
+                //   child: Text("Male"),
+                // ),
+                //    RadioMenuButton(
+                //   value: 'male',
+                //   groupValue: "male",
+                //   onChanged: (value) {},
+                //   child: Text("Male"),
+                // ),
                 GenderContent(
                   text: 'Male',
                   icon: isSelectedGender == false

@@ -1,17 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:kafiil_test/Features/Services/presentation/views/services_view.dart';
+import 'package:kafiil_test/Features/countries/presentation/views/countries_view.dart';
 import 'package:kafiil_test/constants.dart';
 import 'package:kafiil_test/core/utils/styles.dart';
 
 import 'widgets/who_am_i_body.dart';
 
-class WhoAmIView extends StatelessWidget {
+class WhoAmIView extends StatefulWidget {
   const WhoAmIView({super.key});
+
+  @override
+  State<WhoAmIView> createState() => _WhoAmIViewState();
+}
+
+class _WhoAmIViewState extends State<WhoAmIView> {
+  int isSelected = 0;
+  List screens = [
+    const WhoAmIViewBody(),
+    const CountriesView(),
+    const ServicesView()
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const WhoAmIViewBody(),
+      body: screens[isSelected],
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: isSelected,
+        onTap: (value) {
+          setState(() {
+            isSelected = value;
+          });
+        },
         selectedLabelStyle: Styles.textStyle12.copyWith(
           fontWeight: FontWeight.w500,
         ),
